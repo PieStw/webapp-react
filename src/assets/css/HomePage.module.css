@@ -7,6 +7,8 @@
   height: 650px;
   width: 400px;
   border: 1px solid grey;
+  text-decoration: none;
+  color: black;
 }
 
 .cardContainer {

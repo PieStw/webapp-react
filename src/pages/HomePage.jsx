@@ -4,7 +4,7 @@ import styles from "../assets/css/HomePage.module.css";
 import { NavLink } from "react-router-dom";
 
 export default function HomePage() {
-  const { movie, movieList, showMovie } = useMovieContext();
+  const { movieList } = useMovieContext();
   return (
     <>
       <div className={styles.cardContainer}>
@@ -16,9 +16,19 @@ export default function HomePage() {
           >
             <img src={movie.image} class={styles.image} />
             <div className="card-body">
-              <h5 className="card-title">Title: {movie.title}</h5>
-              <p className="card-text">Abstract: {movie.abstract}</p>
-              <p className="card-text">Release Year: {movie.release_year}</p>
+              <h3 className="card-title">Title: {movie.title}</h3>
+              <p>
+                <strong>Director:</strong> {movie.director}
+              </p>
+              <p>
+                <strong>Genre:</strong> {movie.genre}
+              </p>
+              <p>
+                <strong>Release Year:</strong> {movie.release_year}
+              </p>
+              <p>
+                <strong>Abstract:</strong> {movie.abstract}
+              </p>
             </div>
           </NavLink>
         ))}

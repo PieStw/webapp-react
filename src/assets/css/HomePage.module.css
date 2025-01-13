@@ -1,0 +1,20 @@
+.image {
+  height: 500px;
+  width: 400px;
+}
+
+.card {
+  height: 650px;
+  width: 400px;
+  border: 1px solid grey;
+}
+
+.cardContainer {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 80px;
+  column-gap: 120px;
+  justify-content: center;
+}

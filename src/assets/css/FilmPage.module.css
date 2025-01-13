@@ -1,0 +1,26 @@
+.movieContainer {
+  padding: 20px 20px;
+}
+
+.movieInfo {
+  display: flex;
+  gap: 20px;
+}
+
+.movieInfoContainer {
+  max-width: 800px;
+}
+
+.image {
+  width: 300px;
+  height: 450px;
+}
+
+.reviewsSection {
+  margin-top: 50px;
+}
+
+.review {
+  margin-bottom: 15px;
+  padding: 10px;
+}

@@ -14,7 +14,7 @@ export const MovieProvider = ({ children }) => {
       .then((res) => setMovieList(res));
   };
 
-  const showMovie = (id) => {
+  const showMovie = async (id) => {
     fetch(`http://localhost:3000/movies/${id}`)
       .then((res) => res.json())
       .then((res) => setMovie(res));

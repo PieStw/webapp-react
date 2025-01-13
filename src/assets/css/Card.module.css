@@ -1,0 +1,12 @@
+.image {
+  height: 500px;
+  width: 400px;
+}
+
+.card {
+  height: 750px;
+  width: 400px;
+  border: 1px solid #ddd;
+  text-decoration: none;
+  color: black;
+}

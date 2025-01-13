@@ -5,7 +5,18 @@ const MovieContext = createContext();
 export const useMovieContext = () => useContext(MovieContext);
 
 export const MovieProvider = ({ children }) => {
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovie] = useState({
+    id: 0,
+    title: "",
+    director: "",
+    genre: "",
+    release_year: "",
+    abstract: "",
+    image: "",
+    created_at: "",
+    updated_at: "",
+    reviews: [],
+  });
   const [movieList, setMovieList] = useState([]);
 
   const indexMovies = () => {

@@ -18,6 +18,7 @@ export const MovieProvider = ({ children }) => {
     reviews: [],
   });
   const [movieList, setMovieList] = useState([]);
+  const [reviewList, setReviewList] = useState([]);
 
   const indexMovies = () => {
     fetch(`http://localhost:3000/movies`)
@@ -31,12 +32,44 @@ export const MovieProvider = ({ children }) => {
       .then((res) => setMovie(res));
   };
 
+  const showReview = async (id) => {
+    fetch(`http://localhost:3000/reviews/${id}`)
+      .then((res) => res.json())
+      .then((res) => setReviewList(res));
+  };
+
+  const storeReview = (review) => {
+    fetch(`http://localhost:3000/reviews`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: review.name,
+        vote: review.vote,
+        text: review.text,
+        movie_id: review.movie_id,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => showReview(review.movie_id));
+  };
+
   useEffect(() => {
     indexMovies();
   }, []);
 
   return (
-    <MovieContext.Provider value={{ movie, movieList, showMovie }}>
+    <MovieContext.Provider
+      value={{
+        movie,
+        movieList,
+        showMovie,
+        reviewList,
+        storeReview,
+        showReview,
+      }}
+    >
       {children}
     </MovieContext.Provider>
   );
